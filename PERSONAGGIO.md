@@ -3,7 +3,7 @@
 **Nome:** Iolanda Cerf
 **Ruolo:** Tecnico
 **Squadra:** i Corvi del *Vespro*
-**Missione in corso:** Profondo 7 *(vedi [CRONACA.md](CRONACA.md))*
+**Missione in corso:** Profondo 7 *(vedi la cronaca di campagna — `CRONACA.md`, non versionata: il modello è [CRONACA-esempio.md](CRONACA-esempio.md))*
 
 > ⚙️ **Fonte di verità.** La scheda giocabile vive in `partita.json` e la plancia la disegna da lì. Questo file è la versione leggibile e la memoria fra una missione e l'altra: qui stanno le cose che `partita.json` non sa, cioè **da dove viene ognuna di queste righe**.
 

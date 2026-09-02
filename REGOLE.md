@@ -4,7 +4,7 @@
 **Formato:** un giocatore, un GM, una missione per sessione, circa due ore.
 **Materiale:** quattro o cinque d6, due file di caselle, un timer da dieci minuti.
 
-➡️ Cosa succede sta in [TRAMA.md](TRAMA.md). Come si scrive sta in [STILE.md](STILE.md). Dove siamo arrivati sta in [CRONACA.md](CRONACA.md).
+➡️ Cosa succede sta in [TRAMA.md](TRAMA.md). Come si scrive sta in [STILE.md](STILE.md). Dove siamo arrivati sta in `CRONACA.md` *(modello: [CRONACA-esempio.md](CRONACA-esempio.md))*.
 
 **Principio del sistema:** ogni regola serve a mettere il giocatore davanti a una scelta con due prezzi diversi, e nessuna delle due è quella giusta. Se una regola non produce quel momento, va tagliata.
 
@@ -156,7 +156,7 @@ Questa scelta — *il mio corpo o il nostro tempo* — è la domanda che il gioc
 
 Una volta per sessione, quando il giocatore agisce **per** il proprio Legame — per proteggerlo, per fregarlo, per dimostrargli qualcosa — prende **+1d6 gratis**, senza Statica.
 
-A fine missione il Legame **si riscrive** in base a com'è andata. Il vecchio testo si tiene in [CRONACA.md](CRONACA.md): la sequenza dei Legami riscritti è la storia vera del personaggio.
+A fine missione il Legame **si riscrive** in base a com'è andata. Il vecchio testo si tiene nella cronaca di campagna: la sequenza dei Legami riscritti è la storia vera del personaggio.
 
 ---
 
