@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scegli il tuo Corvo — Rumore di Fondo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<link rel="stylesheet" href="/comune.css">
+<style>
+.testa{padding:44px 0 30px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(1.9rem,1rem + 3.4vw,3rem);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;margin-top:8px}
+.testa p{max-width:62ch;margin-top:14px;color:var(--ink-2)}
+
+.corvi{
+  display:grid;gap:14px;padding:30px 0;grid-template-columns:1fr;
+}
+@media(min-width:680px){.corvi{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.corvi{grid-template-columns:repeat(3,1fr)}}
+
+.corvo{
+  border:1px solid var(--line);background:var(--panel);
+  display:flex;flex-direction:column;text-align:left;padding:0;cursor:pointer;
+  color:inherit;font:inherit;
+  transition:border-color .14s ease,background .14s ease;
+}
+.corvo:hover{border-color:var(--line-2);background:var(--panel-2)}
+.corvo:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.corvo[aria-pressed="true"]{border-color:var(--accent);background:#16100C}
+.corvo[aria-pressed="true"] .rit::after{opacity:0}
+
+.rit{position:relative;aspect-ratio:4/3;overflow:hidden;background:#0C1415;border-bottom:1px solid var(--line)}
+.rit img{width:100%;height:100%;object-fit:cover;object-position:center 26%;display:block;filter:saturate(.7)}
+.rit::after{
+  content:"";position:absolute;inset:0;background:rgba(10,17,18,.42);transition:opacity .14s ease;
+}
+.rit .ruolo{
+  position:absolute;left:0;bottom:0;z-index:2;
+  font-family:var(--f-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  background:var(--accent);color:#0A1112;padding:5px 10px;font-weight:600;
+}
+.rit .senza{
+  position:absolute;inset:0;display:grid;place-items:center;
+  font-family:var(--f-mono);font-size:.66rem;letter-spacing:.18em;color:var(--ink-3);
+}
+
+.corpo{padding:16px 18px;display:flex;flex-direction:column;gap:11px;flex:1}
+.corvo h2{font-size:1.12rem;font-weight:800;letter-spacing:-.01em}
+.gancio{font-size:.96rem;color:var(--ink-2);line-height:1.55}
+.mossa{border-top:1px solid var(--line);padding-top:11px;font-size:.88rem;line-height:1.55;color:var(--ink-2)}
+.mossa b{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;color:var(--accent);display:block;margin-bottom:3px}
+.attr{
+  font-family:var(--f-mono);font-size:.68rem;color:var(--ink-3);line-height:1.6;
+  border-top:1px solid var(--line);padding-top:11px;margin-top:auto;
+}
+
+.barra{
+  position:sticky;bottom:0;background:rgba(10,17,18,.96);border-top:1px solid var(--line-2);
+  backdrop-filter:blur(6px);
+}
+.barra .wrap{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;padding-block:16px}
+.barra .sel{font-family:var(--f-mono);font-size:.74rem;color:var(--ink-3);letter-spacing:.05em;margin-right:auto}
+.barra .sel b{color:var(--accent);font-weight:600}
+.avviso{
+  font-family:var(--f-mono);font-size:.7rem;color:var(--signal);letter-spacing:.04em;
+  border:1px solid #4A3512;padding:9px 13px;line-height:1.5;max-width:52ch;
+}
+.errore{color:var(--danger);font-family:var(--f-mono);font-size:.72rem}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <b>RUMORE DI FONDO</b>
+  <a href="/">Copertina</a>
+  <a href="/regole">Regole</a>
+  <a href="/nuova" aria-current="page">Nuova partita</a>
+</div></div>
+
+<div class="wrap testa">
+  <p class="eyebrow">Profondo 7 &middot; equipaggio del Vespro</p>
+  <h1>Scegli il tuo Corvo</h1>
+  <p>Uno lo giochi tu. Gli altri quattro salgono con te e li gioco io: hanno voleri loro, ti contraddicono, e alla fine ti tirano per la manica. La scelta cambia cosa vedi là dentro, non quanto sei forte.</p>
+  <p id="avviso-partita" class="avviso" style="margin-top:18px" hidden></p>
+</div>
+
+<div class="wrap"><div class="corvi" id="corvi"></div></div>
+
+<div class="barra"><div class="wrap">
+  <p class="sel" id="sel">Nessuno selezionato.</p>
+  <p class="errore" id="err" hidden></p>
+  <button class="btn p" id="via" disabled>Entra in Profondo 7</button>
+</div></div>
+
+<script>
+(function(){
+  var PG = __PERSONAGGI__;
+  var IN_CORSO = __PARTITA__;
+  var scelto = null;
+
+  if(IN_CORSO){
+    var a = document.getElementById("avviso-partita");
+    a.hidden = false;
+    a.textContent = "C'è già una partita in corso: " + IN_CORSO.pg + ", scena "
+      + String(IN_CORSO.scena).padStart(2,"0")
+      + ". Sceglierne un altro la archivia e ricomincia da capo. Per riprenderla, torna alla copertina.";
+  }
+
+  var host = document.getElementById("corvi");
+  PG.forEach(function(p){
+    var b = document.createElement("button");
+    b.className = "corvo";
+    b.type = "button";
+    b.setAttribute("aria-pressed", "false");
+
+    var rit = document.createElement("div");
+    rit.className = "rit";
+    var im = document.createElement("img");
+    im.src = "/" + p.ritratto;
+    im.alt = "Ritratto di " + p.nome + ", " + p.ruolo.toLowerCase() + ".";
+    im.loading = "lazy";
+    im.onerror = function(){
+      im.remove();
+      var s = document.createElement("span");
+      s.className = "senza";
+      s.textContent = p.ruolo.toUpperCase();
+      rit.appendChild(s);
+    };
+    rit.appendChild(im);
+    var r = document.createElement("span");
+    r.className = "ruolo";
+    r.textContent = p.ruolo;
+    rit.appendChild(r);
+    b.appendChild(rit);
+
+    var c = document.createElement("div");
+    c.className = "corpo";
+    var h = document.createElement("h2"); h.textContent = p.nome; c.appendChild(h);
+    var g = document.createElement("p"); g.className = "gancio"; g.textContent = p.gancio; c.appendChild(g);
+
+    var m = document.createElement("div"); m.className = "mossa";
+    var mb = document.createElement("b"); mb.textContent = "MOSSA · " + p.mossa_nome.toUpperCase();
+    m.appendChild(mb);
+    m.appendChild(document.createTextNode(p.mossa_testo));
+    c.appendChild(m);
+
+    var at = document.createElement("div"); at.className = "attr";
+    at.textContent = p.attrezzi.map(function(x){ return x.nome; }).join(" · ");
+    c.appendChild(at);
+
+    b.appendChild(c);
+
+    b.addEventListener("click", function(){
+      Array.prototype.forEach.call(host.children, function(x){ x.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+      scelto = p;
+      document.getElementById("sel").innerHTML = "Giochi <b>" + p.nome + "</b> — " + p.ruolo
+        + ". Legame con " + p.legame.a + ": &laquo; " + p.legame.testo + " &raquo;";
+      document.getElementById("via").disabled = false;
+    });
+
+    host.appendChild(b);
+  });
+
+  document.getElementById("via").addEventListener("click", function(){
+    if(!scelto) return;
+    var btn = this, err = document.getElementById("err");
+    btn.disabled = true; err.hidden = true;
+    btn.textContent = "Preparo la piattaforma…";
+    fetch("/inizia", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({pg: scelto.id})
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if(!d.ok) throw new Error(d.err || "rifiutata");
+      location.href = "/plancia";
+    }).catch(function(e){
+      btn.disabled = false;
+      btn.textContent = "Entra in Profondo 7";
+      err.hidden = false;
+      err.textContent = "Non è partita: " + e.message + ". Il server locale è acceso?";
+    });
+  });
+})();
+</script>
+</body>
+</html>

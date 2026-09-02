@@ -1,0 +1,22 @@
+# --- stato di gioco: vive sul disco, non nella storia ---
+CRONACA.md
+partita.json
+partita-*.json
+mosse.jsonl
+tracce.json
+
+# --- generato, si ricostruisce con build.py ---
+plancia.html
+
+# --- script usa-e-getta per la generazione immagini ---
+# il comando canonico sta in STILE-IMMAGINI.md
+gen*.sh
+
+# --- python ---
+__pycache__/
+*.py[cod]
+
+# --- sistema ---
+Thumbs.db
+desktop.ini
+.DS_Store

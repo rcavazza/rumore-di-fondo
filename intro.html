@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rumore di Fondo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<link rel="stylesheet" href="/comune.css">
+<style>
+.hero{position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+.hero img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;
+  opacity:.5;filter:saturate(.75);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,17,18,.35) 0%,rgba(10,17,18,.72) 55%,rgba(10,17,18,.97) 100%);
+}
+.hero .wrap{position:relative;z-index:2;padding-top:96px;padding-bottom:64px}
+h1{
+  font-size:clamp(3rem,1rem + 10vw,7rem);font-weight:800;letter-spacing:-.05em;line-height:.84;
+  text-transform:uppercase;
+}
+h1 span{display:block}
+h1 .b{color:var(--accent)}
+.claim{font-size:1.2rem;max-width:50ch;margin-top:22px;color:var(--ink)}
+.azioni{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+
+.ripresa{
+  margin-top:30px;border:1px solid var(--accent);background:rgba(16,26,27,.86);
+  padding:18px 20px;display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;max-width:640px;
+}
+.ripresa .k{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.2em;color:var(--accent)}
+.ripresa .n{font-family:var(--f-display);font-weight:800;font-size:1.15rem;letter-spacing:.02em}
+.ripresa .d{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-2);line-height:1.5}
+.ripresa .sp{margin-left:auto}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+.due{display:grid;gap:34px;grid-template-columns:1fr}
+@media(min-width:840px){.due{grid-template-columns:1fr 1fr;gap:52px}}
+h2{
+  font-size:clamp(1.4rem,1rem + 1.6vw,1.95rem);font-weight:800;letter-spacing:-.015em;
+  text-transform:uppercase;text-wrap:balance;margin-bottom:16px;
+}
+.testo{display:flex;flex-direction:column;gap:14px;max-width:60ch}
+.regolina{display:flex;flex-direction:column}
+.regolina div{
+  display:grid;grid-template-columns:78px 1fr;gap:0 18px;align-items:baseline;
+  border-top:1px solid var(--line);padding:12px 0;
+}
+.regolina div:last-child{border-bottom:1px solid var(--line)}
+.regolina .k{font-family:var(--f-mono);font-size:.76rem;font-weight:600;letter-spacing:.08em;color:var(--accent)}
+.regolina .k.s{color:var(--signal)}
+.regolina .k.d{color:var(--danger)}
+.fatti{display:flex;flex-wrap:wrap;border:1px solid var(--line);margin-top:26px}
+.fatti div{flex:1 1 140px;padding:13px 16px;border-right:1px solid var(--line)}
+.fatti div:last-child{border-right:0}
+.fatti b{display:block;font-family:var(--f-display);font-size:1.15rem;font-weight:800}
+.fatti span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+footer{padding:44px 0 70px;border-top:1px solid var(--line);font-family:var(--f-mono);font-size:.7rem;color:var(--ink-3);line-height:1.8}
+</style>
+</head>
+<body>
+
+<div class="nav"><div class="wrap">
+  <b>RUMORE DI FONDO</b>
+  <a href="/" aria-current="page">Copertina</a>
+  <a href="/regole">Regole</a>
+  <a href="/nuova">Nuova partita</a>
+  <a href="/plancia" id="nav-pl" hidden>Plancia</a>
+</div></div>
+
+<header class="hero">
+  <img src="/immagini/profondo-7.jpg" alt="La piattaforma Profondo 7 di notte durante una tempesta: sagoma nera sulle gambe, mare grosso, una sola finestra illuminata di arancione appena sopra la linea di galleggiamento.">
+  <div class="wrap">
+    <p class="eyebrow">Gioco di ruolo in solo &middot; una missione &middot; circa due ore</p>
+    <h1><span>Rumore</span><span>di <span class="b">Fondo</span></span></h1>
+    <p class="claim">Entri in un posto che è stato chiuso dall&rsquo;interno, prendi quello per cui ti pagano, ed esci prima che il rumore ti copra.</p>
+    <div class="azioni">
+      <a class="btn p" href="/nuova">Comincia</a>
+      <a class="btn" href="/regole">Leggi le regole</a>
+    </div>
+    <div class="ripresa" id="ripresa" hidden>
+      <div>
+        <p class="k">PARTITA IN CORSO</p>
+        <p class="n" id="r-pg"></p>
+        <p class="d" id="r-d"></p>
+      </div>
+      <a class="btn p sp" href="/plancia">Riprendi</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="due">
+      <div>
+        <h2>Il mondo ha più rovine che manutentori</h2>
+        <div class="testo">
+          <p>Nel 2039 non è finito niente. È stato costruito più di quanto si riesca a tenere acceso. Piattaforme, depositi, data center sommersi, capannoni pieni di batterie: chiusi, sigillati, assicurati, dimenticati.</p>
+          <p>Tu sei un <b>Corvo</b>. Non un eroe, non un criminale: <em>uno che entra</em>. Ti assumono assicuratori, tribunali, aziende che non vogliono comparire. Ti pagano alla consegna. Nessuno viene a prenderti se resti dentro.</p>
+          <p>Stanotte tocca a <b>Profondo 7</b>: un caveau di dati raffreddato ad acqua di mare, quaranta miglia al largo di Ravenna, che ha smesso di rispondere trentuno ore fa. Quattro custodi a bordo. Il portello è chiuso dall&rsquo;interno.</p>
+        </div>
+        <div class="fatti">
+          <div><b>1</b><span>giocatore</span></div>
+          <div><b>2 ore</b><span>una missione</span></div>
+          <div><b>d6</b><span>solo dadi da sei</span></div>
+          <div><b>0</b><span>preparazione</span></div>
+        </div>
+      </div>
+      <div>
+        <h2>Un dado, letto una volta sola</h2>
+        <div class="testo" style="margin-bottom:18px">
+          <p>Quando c&rsquo;è pressione, rischio o qualcuno che ti si oppone, tiri una manciata di d6 e leggi <b>solo il dado più alto</b>. Se non c&rsquo;è nessuna delle tre cose non si tira: sei un professionista, lo fai e basta.</p>
+        </div>
+        <div class="regolina">
+          <div><span class="k">6</span><span><b>Pulito.</b> Funziona come volevi. Nessun costo.</span></div>
+          <div><span class="k s">4&ndash;5</span><span><b>Sporco.</b> Funziona, ma c&rsquo;è un prezzo.</span></div>
+          <div><span class="k d">1&ndash;3</span><span><b>Rumore.</b> Non funziona. Statica +1, e il posto reagisce.</span></div>
+          <div><span class="k">6 6</span><span><b>Limpido.</b> Funziona, e ti resta in mano un vantaggio.</span></div>
+        </div>
+        <div class="testo" style="margin-top:18px">
+          <p>Due tracce al centro del tavolo: la <b>Statica</b> è il volume che stai facendo e il GM la spende per farti male; l&rsquo;<b>Allarme</b> è l&rsquo;ora, non scende mai, e a quattro tacche la piattaforma se la prende il mare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Come si gioca da qui</h2>
+    <div class="due">
+      <div class="testo">
+        <p><b>Il GM sono io</b>, dall&rsquo;altra parte della chat. Scelgo per te tutto quello che non è tuo: cosa c&rsquo;è dietro il portello, cosa dice la squadra, quando il mare entra.</p>
+        <p>Tu scegli il personaggio, poi vivi sulla <b>plancia</b>. La narrazione, i tiri, gli indizi e le tracce compaiono lì. In fondo alla pagina c&rsquo;è una casella: scrivi cosa fai, premi <b>Invia al GM</b>, e la pagina si aggiorna da sola quando ho finito di scrivere la scena.</p>
+      </div>
+      <div class="testo">
+        <p>Prima di ogni tiro ti dico <b>quanti dadi hai e perché</b>. Così <em>Forzare</em> — un dado in più, e Statica +1 per tutti — resta una decisione presa a occhi aperti, non una sorpresa.</p>
+        <p>Non ci sono punti ferita. Ci sono quattro caselle e una domanda che torna venti volte: quando arriva una brutta conseguenza, la paghi <b>tu</b> con una Condizione, o la paga <b>la squadra</b> con un punto di Statica?</p>
+        <p><a href="/regole">Le regole complete stanno qui</a>, e si leggono in cinque minuti. Ma non servono per cominciare.</p>
+      </div>
+    </div>
+    <div class="azioni"><a class="btn p" href="/nuova">Scegli il tuo Corvo</a></div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  RUMORE DI FONDO &mdash; PROFONDO 7 &middot; server locale, 127.0.0.1:7327<br>
+  Le partite si archiviano in partita-*.json. Le mosse inviate finiscono in mosse.jsonl.
+</footer>
+
+<script>
+(function(){
+  var P = __PARTITA__;
+  if(!P) return;
+  document.getElementById("nav-pl").hidden = false;
+  document.getElementById("ripresa").hidden = false;
+  document.getElementById("r-pg").textContent = P.pg + " · " + P.ruolo;
+  document.getElementById("r-d").textContent =
+    "scena " + String(P.scena).padStart(2,"0") + (P.titolo ? " — " + P.titolo : "") +
+    " · statica " + P.statica + "/6 · allarme " + P.allarme + "/4";
+})();
+</script>
+</body>
+</html>

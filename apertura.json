@@ -1,0 +1,89 @@
+{
+  "missione": "PROFONDO 7",
+  "sottotitolo": "44°08'N 12°51'E · Adriatico settentrionale",
+  "finestra": "01:58",
+  "finestra_nota": "poi il Vespro molla",
+  "statica": 0,
+  "allarme": 0,
+  "zone": [
+    {
+      "id": "Z1",
+      "nome": "Ponte alto",
+      "stato": "corrente",
+      "nota": "gru · portello MAREA"
+    },
+    {
+      "id": "Z2",
+      "nome": "Alloggi e mensa",
+      "stato": "ignota",
+      "nota": ""
+    },
+    {
+      "id": "Z3",
+      "nome": "Ponte B",
+      "stato": "ignota",
+      "nota": ""
+    },
+    {
+      "id": "Z4a",
+      "nome": "Sala controllo",
+      "stato": "ignota",
+      "nota": ""
+    },
+    {
+      "id": "Z4b",
+      "nome": "Vault D",
+      "stato": "ignota",
+      "nota": ""
+    }
+  ],
+  "flusso": [
+    {
+      "t": "scena",
+      "n": 1,
+      "zona": "Z1 · PONTE ALTO",
+      "titolo": "Chiusa dall'interno",
+      "ora": "02:02 · finestra aperta"
+    },
+    {
+      "t": "gm",
+      "testo": "Il gommone ha battuto contro la gamba nord per quattro minuti buoni prima che riusciste ad agganciarvi. La scala di servizio finisce a sei metri dall'acqua — qualcuno, anni fa, ha tagliato via il tratto basso per impedire gli abbordaggi. Siete saliti lo stesso, con la sagola e con pazienza, e non è servito tirare: eravate preparati e nessuno vi guardava.\n\nAdesso siete sulla passerella esterna del ponte alto. Quarantacinque nodi che arrivano di traverso e spingono contro il parapetto ogni sette-otto secondi, con una regolarità che sembra volontà. La gru grande sbatte sul suo perno: un colpo ogni tre secondi, metallo su metallo. È l'unica cosa viva su tutta la piattaforma.\n\nProfondo 7 è nera. Nemmeno una luce di posizione, e quelle per legge non si spengono mai."
+    },
+    {
+      "t": "img",
+      "file": "immagini/s01-portello.jpg",
+      "dida": "Il portello principale del ponte alto. La spia meccanica del catenaccio è abbassata.",
+      "alt": "Portello d'acciaio rosso chiuso su una passerella esterna, leva del catenaccio abbassata, grigliato bagnato e ringhiera arrugginita sotto una lampada da lavoro."
+    },
+    {
+      "t": "gm",
+      "testo": "Il portello principale è rosso, con MAREA stampigliato sopra e sotto la maniglia. La spia meccanica del catenaccio è abbassata: non è guasto, non l'ha bloccato il mare. È stato girato. Da una mano."
+    },
+    {
+      "t": "png",
+      "chi_pref": [
+        "Renzo",
+        "Ada",
+        "Nadia",
+        "Tarik",
+        "Iolanda"
+      ],
+      "testo": "Questo non lo apro nemmeno con la gru. Serve corrente, o serve chi sta dentro."
+    },
+    {
+      "t": "gm",
+      "testo": "A quattro metri sulla destra, contro il parapetto, c'è un corpo in tuta di sopravvivenza arancione. Seduto, non disteso. Con la schiena alla ringhiera e la faccia rivolta verso il portello.\n\nNessuno lo ha ancora toccato. E nessuno della squadra ha ancora detto la cosa ovvia: che quel portello è stato chiuso da dentro mentre qualcuno era fuori."
+    }
+  ],
+  "turno": {
+    "momento": "scena 01 · nessun tiro ancora",
+    "testo": "Il vento non aspetta e la finestra nemmeno. Cosa fai, e con cosa?",
+    "opzioni": [
+      "Il portello MAREA — un portello così ha un quadro di comando da qualche parte.",
+      "Il corpo — seduto, rivolto verso l'ingresso, e ancora intatto.",
+      "Il pozzetto della gru o la presa d'aria — due modi di entrare che non passano dal rosso.",
+      "La squadra — qualcuno qui dentro sa più di quanto ha detto sul gommone."
+    ],
+    "nota": "Scrivi quello che vuoi: le opzioni sono solo appigli, cliccale per riempire la casella. Prima di ogni tiro ti dico quanti dadi hai e perché, così Forzare resta una tua scelta."
+  }
+}

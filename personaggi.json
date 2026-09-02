@@ -1,0 +1,92 @@
+[
+  {
+    "id": "tecnico",
+    "nome": "Iolanda Cerf",
+    "ruolo": "Tecnico",
+    "ritratto": "immagini/pg-tecnico.jpg",
+    "gancio": "Scava la verità più in fretta di chiunque. Le macchine ti rispondono e le persone no.",
+    "mossa_nome": "Ci parlo io",
+    "mossa_testo": "Una volta per scena, fai a una macchina UNA domanda sulla sua storia — cosa ha fatto, quando, per ordine di chi. Il GM risponde il vero. Non si tira.",
+    "tratti": ["Ha installato metà di questi impianti negli anni '30", "Non alza mai la voce"],
+    "attrezzi": [
+      { "nome": "Terminale a pinze", "nota": "si aggancia a qualunque bus di servizio", "stato": "ok" },
+      { "nome": "Chiave dinamometrica", "nota": "pesante, e fa rumore", "stato": "ok" },
+      { "nome": "Badge scaduto", "nota": "personale — funziona ancora, non chiedere perché", "stato": "ok" }
+    ],
+    "legame": { "a": "Tarik", "testo": "Sei l'unico che non mi chiede di spiegare.", "usato": false },
+    "vuole": "Sapere chi ha spento la telemetria, e perché.",
+    "npc": { "dove": "dietro la squadra, con il terminale già in mano", "nota": "Legge gli impianti come altri leggono le facce. Vuole sapere chi ha spento la telemetria." }
+  },
+  {
+    "id": "cane",
+    "nome": "Renzo \"Ferraglia\" Bosco",
+    "ruolo": "Cane",
+    "ritratto": "immagini/pg-cane.jpg",
+    "gancio": "La squadra sopravvive perché tu ti consumi al posto loro. Ogni volta.",
+    "mossa_nome": "Prima io",
+    "mossa_testo": "Quando ti prendi una conseguenza al posto di un altro, non tiri e la Statica non sale. La conseguenza però è tua per intero.",
+    "tratti": ["Undici anni in Guardia Costiera, radiato", "Sa quando una struttura sta per cedere"],
+    "attrezzi": [
+      { "nome": "Piede di porco corto", "nota": "sverniciato dall'uso", "stato": "ok" },
+      { "nome": "Bombola d'emergenza", "nota": "quattro minuti, non uno di più", "stato": "ok" },
+      { "nome": "Fischietto di suo figlio", "nota": "personale — non lo usa mai", "stato": "ok" }
+    ],
+    "legame": { "a": "Iolanda", "testo": "Ti ho tirata fuori una volta e non me l'hai mai chiesto.", "usato": false },
+    "vuole": "Che stavolta escano tutti, anche a costo del carico.",
+    "npc": { "dove": "davanti a tutti, sempre", "nota": "Ha già deciso che si entra. Vuole che escano tutti, e lo dice come se fosse semplice." }
+  },
+  {
+    "id": "palombaro",
+    "nome": "Tarik Muzaffer",
+    "ruolo": "Palombaro",
+    "ritratto": "immagini/pg-palombaro.jpg",
+    "gancio": "La piattaforma ti fa meno paura delle persone che ci stanno dentro.",
+    "mossa_nome": "Fondo",
+    "mossa_testo": "Non tiri mai per attraversare acqua, buio o passaggi stretti. Decidi tu chi altro passa con te, e cosa deve lasciare.",
+    "tratti": ["Cresciuto sui cantieri sommersi di Chioggia", "Conta i respiri, sempre"],
+    "attrezzi": [
+      { "nome": "Rebreather corto raggio", "nota": "silenzioso, e vale una vita sola", "stato": "ok" },
+      { "nome": "Sagola da 40 metri", "nota": "annodata ogni due", "stato": "ok" },
+      { "nome": "Torcia di suo fratello", "nota": "personale — la lampadina è quella originale", "stato": "ok" }
+    ],
+    "legame": { "a": "Nadia", "testo": "Firmi tu i contratti, quindi la colpa è tua.", "usato": false },
+    "vuole": "Non lasciare dei corpi sott'acqua. Mai più.",
+    "npc": { "dove": "ultimo della fila, ancora imbragato", "nota": "Conta i respiri a voce bassa. Non vuole lasciare corpi sott'acqua." }
+  },
+  {
+    "id": "fissatore",
+    "nome": "Nadia Sartori",
+    "ruolo": "Fissatore",
+    "ritratto": "immagini/pg-fissatore.jpg",
+    "gancio": "Sei tu quella con le mani sporche fin dall'inizio: il contratto l'hai firmato tu.",
+    "mossa_nome": "Il contratto vero",
+    "mossa_testo": "Una volta per sessione chiedi cosa il cliente non vi ha detto. Il GM deve darti una risposta vera, utile e scomoda.",
+    "tratti": ["Ex perito assicurativo", "Sa quanto vale un cadavere su un modulo"],
+    "attrezzi": [
+      { "nome": "Registratore a contatto", "nota": "si appoggia e sente attraverso il metallo", "stato": "ok" },
+      { "nome": "Contante in tre valute", "nota": "in una busta impermeabile", "stato": "ok" },
+      { "nome": "Il contratto, in carta", "nota": "personale — controfirmato, e lo tiene addosso", "stato": "ok" }
+    ],
+    "legame": { "a": "Renzo", "testo": "Ti pago perché tu non faccia domande, e le fai lo stesso.", "usato": false },
+    "vuole": "Chiudere il debito che ha con il cliente. Stanotte.",
+    "npc": { "dove": "sottovento, in disparte", "nota": "Ha firmato lei il contratto. Non ha ancora detto tutto, e si vede." }
+  },
+  {
+    "id": "medico",
+    "nome": "Ada Piras",
+    "ruolo": "Medico",
+    "ritratto": "immagini/pg-medico.jpg",
+    "gancio": "Sei quella che decide quanto costa tenere in piedi gli altri.",
+    "mossa_nome": "Il taglio giusto",
+    "mossa_testo": "Cancelli una Condizione di un altro fuori dalla Pausa. Scegli tu il prezzo: Statica +2, oppure ti segni Scosso.",
+    "tratti": ["Pronto soccorso di guerra", "Vede la contaminazione prima degli strumenti"],
+    "attrezzi": [
+      { "nome": "Kit da trauma", "nota": "tre garze emostatiche, e basta", "stato": "ok" },
+      { "nome": "Analizzatore d'aria", "nota": "portatile, lento, onesto", "stato": "ok" },
+      { "nome": "Blocco di note", "nota": "personale — una pagina per ogni persona che ha perso", "stato": "ok" }
+    ],
+    "legame": { "a": "Tarik", "testo": "Ti conosco meglio del tuo medico e non ti ho mai visto dormire.", "usato": false },
+    "vuole": "Portare fuori una persona viva, per una volta.",
+    "npc": { "dove": "a metà fila, con il kit già aperto a metà", "nota": "Guarda le persone come guarda le ferite. Vuole portarne fuori una viva, per una volta." }
+  }
+]
