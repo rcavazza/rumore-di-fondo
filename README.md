@@ -101,7 +101,6 @@ Due terminali, quindi: uno per `server.py`, uno per `attesa.py` fra una mossa e 
 | `STILE-IMMAGINI.md` | Stile visivo, prompt canonici, come entrano in gioco le illustrazioni |
 | `PERSONAGGIO.md` | La scheda estesa del personaggio giocante |
 | `CRONACA-esempio.md` | Modello della cronaca di campagna, da copiare in `CRONACA.md` |
-| `PIANO-ONLINE.md` | Come pubblicare il gioco, e a che costo |
 | `server.py` | Il server locale: pagine, mosse, avvio partita |
 | `build.py` | Inietta lo stato nel template e scrive `plancia.html` |
 | `attesa.py` | Blocca finché non arriva una mossa, poi la stampa |
@@ -111,7 +110,7 @@ Due terminali, quindi: uno per `server.py`, uno per `attesa.py` fra una mossa e 
 | `tira.ps1` | Tiratore da riga di comando (PowerShell), tiene anche le tracce |
 | `immagini/` | Ritratti, copertina, illustrazioni delle scene |
 
-**Non versionati**, perché sono lo stato di una partita e non il gioco: `CRONACA.md`, `partita.json`, `mosse.jsonl`, `tracce.json`, e `plancia.html` che si rigenera.
+**Non versionati**, perché sono appunti di lavoro o lo stato di una partita e non il gioco: `CRONACA.md`, `PIANO-ONLINE.md`, `partita.json`, `mosse.jsonl`, `tracce.json`, e `plancia.html` che si rigenera.
 
 ---
 
@@ -139,4 +138,6 @@ Morti sul lavoro, corpi, annegamento, spazi chiusi e sommersi, colpa e responsab
 
 ## Licenza
 
-Non ancora scelta. Le ipotesi e le cose da verificare — inclusi i diritti sulle illustrazioni, che sono generate — stanno in **[PIANO-ONLINE.md](PIANO-ONLINE.md)**.
+Non ancora scelta.
+
+Da chiarire prima di qualunque pubblicazione: i diritti sulle illustrazioni, che sono generate da un modello, dipendono dai termini del servizio usato per produrle.
