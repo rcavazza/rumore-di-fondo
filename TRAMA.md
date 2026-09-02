@@ -7,7 +7,7 @@
 
 ⚠️ **Documento del GM.** Contiene tutte le risposte. Non va aperto da chi gioca.
 
-➡️ Come si risolve: [REGOLE.md](REGOLE.md). Come si scrive: [STILE.md](STILE.md). Dove siamo: `CRONACA.md` *(modello: [CRONACA-esempio.md](CRONACA-esempio.md))*.
+➡️ Come si risolve: [REGOLE.md](REGOLE.md). Come si conduce: [CONDURRE.md](CONDURRE.md). Come si scrive: [STILE.md](STILE.md). Dove siamo: `CRONACA.md` *(modello: [CRONACA-esempio.md](CRONACA-esempio.md))*.
 
 ---
 

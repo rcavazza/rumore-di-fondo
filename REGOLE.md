@@ -4,7 +4,7 @@
 **Formato:** un giocatore, un GM, una missione per sessione, circa due ore.
 **Materiale:** quattro o cinque d6, due file di caselle, un timer da dieci minuti.
 
-➡️ Cosa succede sta in [TRAMA.md](TRAMA.md). Come si scrive sta in [STILE.md](STILE.md). Dove siamo arrivati sta in `CRONACA.md` *(modello: [CRONACA-esempio.md](CRONACA-esempio.md))*.
+➡️ Come si conduce sta in [CONDURRE.md](CONDURRE.md). Cosa succede sta in [TRAMA.md](TRAMA.md). Come si scrive sta in [STILE.md](STILE.md). Dove siamo arrivati sta in `CRONACA.md` *(modello: [CRONACA-esempio.md](CRONACA-esempio.md))*.
 
 **Principio del sistema:** ogni regola serve a mettere il giocatore davanti a una scelta con due prezzi diversi, e nessuna delle due è quella giusta. Se una regola non produce quel momento, va tagliata.
 
@@ -201,3 +201,11 @@ Un Corvo alla decima missione tira esattamente gli stessi dadi del primo giorno.
 4. **Nessuna scena senza una scelta.** Se il giocatore non ha davanti almeno due cose che non può avere entrambe, la scena non è pronta.
 5. **Il giocatore può sempre chiedere «quanto mi costa?» e ricevere una risposta esatta.**
 6. **Nessuna verità nascosta per il gusto di nasconderla.** Se il giocatore cerca, trova. Il gioco non è indovinare: è decidere cosa fare di quello che si è trovato.
+
+---
+
+## 10. E ADESSO
+
+Il regolamento finisce qui: sono tutte le regole che ci sono.
+
+Quello che il regolamento non dice — chi racconta cosa, quanto si parla prima di ridare la parola, come si dosa la Statica dal vivo, cosa si mette al posto di un danno, come si giocano quattro PNG che vogliono cose incompatibili — sta in **[CONDURRE.md](CONDURRE.md)**, che si legge in dieci minuti e non contiene spoiler.

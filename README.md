@@ -37,7 +37,9 @@ Il regolamento completo, che si legge in cinque minuti, sta in **[REGOLE.md](REG
 
 ## Due modi di usarlo
 
-**Al tavolo, con delle persone.** Servono quattro o cinque d6, due file di caselle su un foglio e un timer da dieci minuti. Il regolamento e la missione bastano: `rumore-di-fondo.html` è il manuale in una pagina sola, apribile con un doppio clic.
+**Al tavolo, con delle persone.** Servono quattro o cinque d6, due file di caselle su un foglio e un timer da dieci minuti. `rumore-di-fondo.html` è il manuale in una pagina sola, apribile con un doppio clic.
+
+Chi conduce legge due cose: **[REGOLE.md](REGOLE.md)** per il sistema e **[CONDURRE.md](CONDURRE.md)** per il mestiere — chi racconta cosa, come si descrive a voce, come si gestiscono le tracce dal vivo, il menu delle conseguenze, come si giocano i PNG e i dieci errori tipici. Nessuno dei due contiene spoiler. Il dossier della missione, che invece li contiene tutti, si legge a parte.
 
 **Da soli, con un GM che scrive.** L'applicazione in questa cartella regge una partita in solitaria in cui il game master è una sessione di Claude Code: il giocatore legge le scene sulla plancia nel browser e ci scrive dentro le proprie mosse.
 
@@ -96,6 +98,7 @@ Due terminali, quindi: uno per `server.py`, uno per `attesa.py` fra una mossa e 
 | File | Cosa |
 |---|---|
 | `REGOLE.md` | Il sistema completo |
+| `CONDURRE.md` | Come si sta dietro lo schermo: descrivere, dosare, far parlare i PNG |
 | `TRAMA.md` | ⚠️ **Bibbia della missione: contiene tutte le risposte.** Non aprire se giochi |
 | `STILE.md` | Voce, tono e lessico: si legge prima di scrivere narrazione |
 | `STILE-IMMAGINI.md` | Stile visivo, prompt canonici, come entrano in gioco le illustrazioni |

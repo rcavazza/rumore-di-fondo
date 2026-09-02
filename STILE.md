@@ -8,6 +8,8 @@
 
 **Stile visivo:** vive separato in [STILE-IMMAGINI.md](STILE-IMMAGINI.md).
 
+**Se giochi a voce e non per iscritto**, il file che ti serve è [CONDURRE.md](CONDURRE.md): al tavolo hai quattro frasi, non quattro paragrafi, e le tecniche qui sotto vanno dosate diversamente. Questo file resta utile come repertorio, ma è scritto per chi compone il testo con calma.
+
 ---
 
 ## 1. LA VOCE — nove tecniche, con i campioni veri
