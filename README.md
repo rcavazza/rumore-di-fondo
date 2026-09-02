@@ -8,7 +8,7 @@ Nel 2039 è stato costruito più di quanto si riesca a tenere acceso. Piattaform
 
 La prima missione è **Profondo 7**: un caveau di dati raffreddato ad acqua di mare che ha smesso di rispondere trentuno ore fa. Quattro custodi a bordo, e il portello chiuso dall'interno. Niente di soprannaturale, mai: ogni cosa strana ha una spiegazione tecnica o umana, e alla fine arriva.
 
-Si gioca **al tavolo** con quattro d6 e due file di caselle, oppure **in solitaria** con l'applicazione locale in questa cartella, in cui il game master è una sessione di Claude Code.
+Si gioca **al tavolo** con quattro d6 e due file di caselle — servono [REGOLE.md](REGOLE.md) e [CONDURRE.md](CONDURRE.md), nessuno dei due con spoiler — oppure **in solitaria** con l'applicazione locale in questa cartella, in cui il game master è una sessione di Claude Code.
 
 ---
 
@@ -28,6 +28,8 @@ Base 1d6, più un dado se il tuo **Ruolo** c'entra, uno se hai l'**Attrezzo** gi
 Due tracce al centro del tavolo: la **Statica** (0–6) è il volume che stai facendo e il GM la *spende* per farti male; l'**Allarme** (0–4) è l'ora, non scende mai, e ogni tacca cambia il posto in modo irreversibile.
 
 Niente punti ferita. Quattro **Condizioni**, e a ogni conseguenza la stessa domanda: la paghi tu con il corpo, o la paga la squadra con un punto di Statica?
+
+Sono tutte le regole che ci sono: il testo completo sta in **[REGOLE.md](REGOLE.md)** e si legge in cinque minuti.
 
 ---
 
@@ -59,6 +61,8 @@ Poi apri **http://127.0.0.1:7327**.
 5. La pagina interroga `/versione` ogni 1,5 s e si ricarica da sola. Se stai scrivendo aspetta e ti offre un tasto, invece di strapparti il testo di mano.
 
 Servono due terminali: uno per `server.py`, uno per `attesa.py` fra una mossa e l'altra.
+
+Chi fa il GM scrive le scene con la voce di [STILE.md](STILE.md), le illustra secondo [STILE-IMMAGINI.md](STILE-IMMAGINI.md) e tiene aperto il dossier della missione — [TRAMA.md](TRAMA.md), che contiene tutte le risposte.
 
 La plancia mostra il flusso della partita — narrazione, dialoghi, tiri, eventi, indizi, immagini — con in coda il riquadro **Tocca a te**, dove ogni strada possibile ha **i dadi già dichiarati**. A lato: scheda, squadra, zone scoperte, indizi, e dadi/timer/taccuino locali al browser.
 
@@ -98,6 +102,8 @@ La plancia mostra il flusso della partita — narrazione, dialoghi, tiri, eventi
 ```
 
 ⚠️ Le tracce di `tira.ps1` e quelle della plancia sono **due contatori distinti** e non si sincronizzano.
+
+Per portare il gioco a un tavolo senza far girare niente basta `rumore-di-fondo.html`, che è il manuale completo in una pagina sola.
 
 **Non versionati**, perché sono lo stato di una partita e non il gioco: `CRONACA.md`, `partita.json`, `mosse.jsonl`, `tracce.json`, e `plancia.html` che si rigenera.
 
