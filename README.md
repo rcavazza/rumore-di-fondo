@@ -50,6 +50,15 @@ Poi apri **http://127.0.0.1:7327**.
 | `/nuova` | Scelta fra i cinque personaggi pregenerati |
 | `/plancia` | Il gioco |
 
+**Per le illustrazioni** *(facoltative)* servono due variabili d'ambiente, una volta sola. `setx` vale dai processi successivi, quindi riapri il terminale dopo:
+
+```bash
+setx CLOUDFLARE_ACCOUNT_ID "il-tuo-account-id"
+setx CLOUDFLARE_API_TOKEN "il-tuo-token"
+```
+
+Non fare `echo` del token. La skill che le genera, **`flux-image`**, è inclusa in `.claude/skills/` e funziona subito dopo il clone.
+
 ---
 
 ## Il giro di gioco in solitaria
@@ -73,6 +82,7 @@ La plancia mostra il flusso della partita — narrazione, dialoghi, tiri, eventi
 | File | Per chi |
 |---|---|
 | [REGOLE.md](REGOLE.md) | Il sistema completo. Cinque minuti |
+| `CLAUDE.md` | Istruzioni che Claude Code carica da solo: chi è, cosa legge, cosa non rivela |
 | [CONDURRE.md](CONDURRE.md) | Chi conduce: descrivere a voce, dosare le tracce, i PNG, gli errori tipici. Senza spoiler |
 | [TRAMA.md](TRAMA.md) | ⚠️ Bibbia della missione: **contiene tutte le risposte** |
 | [STILE.md](STILE.md) | Voce e lessico, per giocare per iscritto |
@@ -93,6 +103,7 @@ La plancia mostra il flusso della partita — narrazione, dialoghi, tiri, eventi
 | `apertura.json` · `personaggi.json` | Scena iniziale e i cinque Corvi |
 | `tira.ps1` | Tiratore da riga di comando (PowerShell), tiene anche le tracce |
 | `rumore-di-fondo.html` | Il manuale in una pagina sola, apribile con un doppio clic |
+| `.claude/skills/` | `flux-image`, inclusa nel repository |
 | `immagini/` | Ritratti, copertina, illustrazioni |
 
 ```bash
