@@ -120,8 +120,19 @@ Per portare il gioco a un tavolo senza far girare niente basta `rumore-di-fondo.
 
 ---
 
-## Avvertenze e licenza
+## Avvertenze
 
 Contenuti: morti sul lavoro, corpi, annegamento, spazi chiusi e sommersi, colpa e responsabilità. Nessuna violenza esplicita — il gioco guarda sempre l'oggetto accanto.
 
-Licenza non ancora scelta. Da chiarire prima di qualunque pubblicazione: i diritti sulle illustrazioni, che sono generate da un modello, dipendono dai termini del servizio usato per produrle.
+---
+
+## Licenza
+
+Due licenze, perché ci sono due cose diverse:
+
+- **Il codice** — server, build, tiratore, template, skill — è **[MIT](LICENSE)**. Fanne quello che vuoi.
+- **Il gioco** — regolamento, missione, personaggi, testi e illustrazioni — è **CC BY-NC-SA 4.0**: puoi condividerlo, tradurlo, scrivere missioni nuove e adattarlo, citando la fonte e mantenendo la stessa licenza, ma non venderlo.
+
+**Condurlo a un tavolo non richiede alcun permesso.** È uso, non distribuzione.
+
+I dettagli, incluse le note sulle illustrazioni generate e sui caratteri tipografici, stanno in **[LICENZA-GIOCO.md](LICENZA-GIOCO.md)**.

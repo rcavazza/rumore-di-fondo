@@ -1,0 +1,13 @@
+# Fine riga normalizzati: LF nel repository, nativi nella copia di lavoro.
+* text=auto eol=lf
+
+# File che devono restare CRLF su Windows per non rompersi
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# Binari: nessuna conversione, nessun diff testuale
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.pdf  binary
