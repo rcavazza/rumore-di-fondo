@@ -6,7 +6,7 @@
 > Il giocatore aspetta 15–30 secondi in più a turno. È un prezzo accettabile e non va scaricato su di lui: mai pubblicare il testo e aggiungere l'immagine dopo, perché la pagina si ricarica e gli strappa la lettura di mano.
 > Restano utili anche le immagini d'ambiente generate in anticipo per le zone non ancora visitate: quelle si preparano quando c'è tempo morto.
 
-**Cartella immagini:** `C:\Users\ricca\RumoreDiFondo\immagini\`
+**Cartella immagini:** `immagini/`
 **Come entrano in gioco:** una voce nel flusso di `partita.json`, poi `python build.py`.
 ```json
 { "t": "img",
@@ -50,13 +50,13 @@ Si usa la skill **`/flux-image`**, sempre tramite `scripts/cloudflare.py` (mai `
 Modello di default `flux2-klein-4b` a 1024px: ~95 immagini al giorno di quota gratuita. Non passare `--model` senza motivo: `phoenix` e `flux2-klein-9b` costano 10–20× e bruciano la giornata in 3–4 immagini.
 
 ```bash
-python "C:/Users/ricca/.claude/skills/flux-image/scripts/cloudflare.py" "<prompt in inglese>" \
-  --width 1024 --height 640 --out "C:/Users/ricca/RumoreDiFondo/immagini"
+python ".claude/skills/flux-image/scripts/cloudflare.py" "<prompt in inglese>" \
+  --width 1024 --height 640 --out immagini
 ```
 
 Lo script stampa una riga JSON con `path`: rinominare subito il file in `sNN-soggetto.jpg`, altrimenti la cartella diventa illeggibile.
 
-Se compare la riga `"backend": "pollinations"`, le credenziali Cloudflare non sono state caricate e la qualità crolla. In questa sessione erano già nell'ambiente e non è servito caricarle.
+Se compare la riga `"backend": "pollinations"`, le credenziali Cloudflare non sono nell'ambiente e la qualità crolla: vedi il [README](README.md).
 
 ---
 

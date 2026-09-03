@@ -188,7 +188,7 @@ the model garbles all three routinely, and those are the failures users notice i
 
 `cloudflare.py` reads `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` from the environment and
 never writes either one — persisting a token is the user's call, not something to do on their behalf.
-On this machine the account id is already set permanently; only the token needs to be present.
+Both must be present in the environment; the repository README explains how to set them.
 
 If the fallback line appears, the token isn't in the environment. Give the user this to run once,
 rather than exporting it yourself in a shell that dies with the command:
